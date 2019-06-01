@@ -4,7 +4,13 @@ server:
 spring:
   application:
     name: order-service
-  #TODO: add configs for config server
+  cloud:
+    config:
+      discovery:
+        service-id: config-server
+        enabled: true
+      enabled: true
+      fail-fast: true
 
 eureka:
   instance:
